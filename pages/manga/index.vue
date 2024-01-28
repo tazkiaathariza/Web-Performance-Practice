@@ -17,10 +17,10 @@ export default {
         }
     },
     mounted(){
-        this.fetchAnimeList()
+        this.fetchMangaList()
     },
     methods: {
-        async fetchAnimeList(){
+        async fetchMangaList(){
             const resp = await fetch('https://api.jikan.moe/v4/manga');
             const body = await resp.json();
             this.items = body.data;

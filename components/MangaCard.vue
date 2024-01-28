@@ -1,9 +1,10 @@
 <template>
-     <div class="border rounded p-4 bg-white min-h-[380px] max-h-[380px]" width="500">
+     <div class="border rounded p-4 bg-white min-h-[400px] max-h-[400px]" width="500">
         <!-- Konten Card -->
         <NuxtImg :alt="anime.title" :src="anime.images.webp.image_url" class="border rounded max-h-[250px]" width="300"/>
         <h2 class="text-md font-bold leading-loose mb-1">{{ truncateTitle(anime.title) }}</h2>
         <p class="text-md font-normal mb-3">{{ truncateBackground(anime.synopsis) }}</p>
+        <NuxtLink :to="{ path: `/manga/${anime.mal_id}` }" class="text-blue-500">Read More ></NuxtLink>
     </div>
 </template>
 
@@ -24,7 +25,7 @@ export default {
         },
         truncateBackground(synopsis) {
             if (synopsis.length > 50) {
-                return synopsis.substring(0, 45) + '...';
+                return synopsis.substring(0, 35) + '...';
             }
         return synopsis;
         }
