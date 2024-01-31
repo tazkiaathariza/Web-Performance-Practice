@@ -16,10 +16,24 @@ export default defineNuxtConfig({
     }
   },
   ssr: true,
-  modules: ["@nuxt/image", 'nuxt-delay-hydration'],
-  delayHydration: {
-    debug: process.env.NODE_ENV === 'development'
-  },
+  modules: ["@nuxt/image",
+  ['nuxt-highcharts', {
+    setOptions:{
+      colors: ['#FF9843', '#86A7FC', '#FFDD95', '#3468C0'],
+      chart: {
+        background: 'transparent',
+      },
+      lang: { // ngatur bahasa untuk opsi download
+        downloadPNG: 'Unduh Gambar PNG',
+        downloadPDF: 'Unduh Gambar PDF',
+        downloadJPEG: 'Unduh Gambar JPEG',
+      },
+      credits: { //logo highcjhart
+        enabled: false
+       },
+    }
+    }]
+  ],
   image: {
     presets: {
       presetOne: {

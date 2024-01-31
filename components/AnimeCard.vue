@@ -20,7 +20,7 @@ export default {
     methods: {
         truncateTitle(title) {
             if (title.length > 25) {
-                return title.substring(0, 20) + '...';
+                return title.substring(0, 18) + '...';
             }
         return title;
         }
