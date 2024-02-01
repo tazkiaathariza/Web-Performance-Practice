@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   modules: ["@nuxt/image",
   ['nuxt-highcharts', {
     setOptions:{
-      colors: ['#FF9843', '#86A7FC', '#FFDD95', '#3468C0'],
+      colors: ['#14B8A6', '#f59042', '#0F766E', '#0D9488', '#5EEAD4', '#2DD4BF', '#115E59'],
       chart: {
         background: 'transparent',
       },

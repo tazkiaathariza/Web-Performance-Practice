@@ -1,21 +1,31 @@
 <template>
-    <p>Advance (Day 2)</p>
+     <div class="items-center justify-between text-center mb-5">
+        <h1 class="text-2xl font-bold">Advance Graphic</h1>
+        <p class="mt-2">Data Visualization Day 2 - Tazkia Athariza</p>
+    </div>  
 
-    <div class="grid bg-gray-100 mx-5">
-        <div class="bg-gray-100">
-            <highchart 
+    <div class="grid my-5 p-3">
+        <p class="text-teal-800">✓ Multiple Axis :</p>
+        <highchart 
             :options="chartMultipleAxisOptions" 
             :modules="['exporting', 'export-data']"
-            class="my-5 mx-3" />
-            <highchart 
+            class="my-5 mx-3 p-2 bg-gray-50 bg-gray-50 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+        />
+        <p class="text-teal-800">✓ Multiple Chart :</p>
+        <highchart 
             :options="chartOptions" 
             :modules="['exporting', 'export-data']"
-            class="my-5 mx-3" />
-        </div>
+            class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+        />
+        
     </div>
 </template>
 
 <script>
+definePageMeta({ 
+  layout:'forchart'
+});
+
 export default {
     data(){
         return{
@@ -26,12 +36,11 @@ export default {
                 },
                 title: {
                     text: "Statistik Cuaca di Kota Surabaya",
-                    style: { // css
-                        align: 'left'
-                    }
+                    align: 'left',
                 },
                 subtitle: {
-                    text: "Data Cuaca di Kota Surabaya Tahun 2022"
+                    text: "Data Cuaca di Kota Surabaya Tahun 2022",
+                    align: 'left',
                 },
                 legend: {
                     align: 'right',
@@ -39,7 +48,6 @@ export default {
                     layout: 'horizontal', // bisa proximate
                     reversed: true // awalnya pria - wanita, jadi wanita-pria
                 },
-      
                 plotOptions: {
                     column: {
                         dataLabels: {
@@ -47,8 +55,22 @@ export default {
                         }
                     }
                 },
+                tooltip: { 
+                    enabled: true, 
+                    shared: true, 
+                    formatter: function(){
+                    console.log(this.points);
+                    return [`<b>Bulan ${this.x}</b><br/>`].concat(
+                        this.points ? this.points.map(point => {
+                            return `${point.series.name}: ${point.y}<br/>`
+                        }) : []
+                     )
+                    },
+                },
                 xAxis:{
-                    categories: ["Jan", "Feb", 'Mar', 'Apr', 'Mei', 'Juni', 'Juli', 'Agt', 'Sept', 'Okt', 'Nov', 'Des'],
+                    categories: ["Jan", "Feb", 'Mar', 'Apr', 'Mei', 'Juni', 'Juli', 'Agt', 
+                        'Sept', 'Okt', 'Nov', 'Des'
+                    ],
                     title: {
                         text: "Bulan"
                     }
@@ -121,12 +143,11 @@ export default {
                 },
                 title: {
                     text: "Statistik Penduduk Surabaya",
-                    style: { // css
-                        align: 'left'
-                    }
+                    align: 'left',
                 },
                 subtitle: {
-                    text: "Data Penduduk Surabaya tahun 2018 - 2022"
+                    text: "Data Penduduk Surabaya tahun 2018 - 2022",
+                    align: 'left',
                 },
                 legend: {
                     align: 'right',
@@ -145,8 +166,8 @@ export default {
                             return `Jumlah 
                             ${point.series.name}: ${point.y}<br/>`
                         }) : []
-                    )
-                },
+                     )
+                    },
                 },
                 plotOptions: {
                     column: {
@@ -212,7 +233,5 @@ export default {
         }
     }
 };
-definePageMeta({ 
-  layout:'forchart'
-})
+
 </script>

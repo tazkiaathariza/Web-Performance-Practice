@@ -1,36 +1,55 @@
 <template>
-    <div class="grid grid-cols-2 bg-gray-100">
-        <div class="bg-gray-100">
+
+    <div class="items-center justify-between text-center my-2">
+        <h1 class="text-2xl font-bold">Basic Chart</h1>
+        <p class="mt-2 mb-5">Data Visualization Day 1 - Tazkia Athariza</p>
+    </div>  
+
+    <div class="grid lg:grid-cols-2">
+        <div>
+            <p class="text-teal-800 my-3 mx-3 pt-3">✓ Spline chart :</p>
             <highchart 
-            :options="chartOptions" 
-            :modules="['exporting', 'export-data']"
-            class="my-5 mx-3" />
+                :options="chartOptions" 
+                :modules="['exporting', 'export-data']"
+                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                 hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+            />
         </div>
-
-        <div class="bg-gray-100">
-            <highchart :options="chartColumnOptions" 
-            :modules="['exporting', 'export-data']" 
-            class="my-5 mx-5" />
+        <div>
+            <p class="text-teal-800 my-3 mx-3 pt-3">✓ Column chart :</p>
+            <highchart 
+                :options="chartColumnOptions" 
+                :modules="['exporting', 'export-data']"
+                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                 hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+            />
         </div>
-    </div>
-
-    <div class="grid grid-cols-2">
-        <div class="bg-gray-100">
-            <highchart :options="chartAreaOptions" 
-            :modules="['exporting', 'export-data']"
-            class="my-5 mx-3" />
+        <div>
+            <p class="text-teal-800 my-3 mx-3 p-1">✓ Area chart :</p>
+            <highchart 
+                :options="chartAreaOptions" 
+                :modules="['exporting', 'export-data']"
+                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                 hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+            />
         </div>
-
-        <div class="bg-gray-100">
-            <highchart :options="chartBarOptions" 
-            :modules="['exporting', 'export-data']"
-            class="my-5 mx-5" />
+        <div>
+            <p class="text-teal-800  my-3 mx-3 p-1">✓ Bar chart :</p>
+            <highchart 
+                :options="chartBarOptions" 
+                :modules="['exporting', 'export-data']"
+                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                 hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+            />
         </div>
-    </div>
-
-     <div class="grid grid-cols-2">
-        <div class="bg-gray-100">
-            <highchart :options="pieChartOptions"  class="my-5 mx-3" />
+        <div>
+            <p class="text-teal-800 my-3 mx-3 p-1">✓ Pie chart :</p>
+               <highchart 
+                :options="pieChartOptions" 
+                :modules="['exporting', 'export-data']"
+                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                 hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+            />
         </div>
     </div>
 
@@ -43,12 +62,12 @@ export default {
             chartOptions: {
                 chart:{
                     type: 'spline',
-                backgroundColor: 'transparent',
+                    backgroundColor: 'transparent',
                 },
                 title: {
                     text: "Statistik Penduduk Lombok",
                     style: { // css
-                        fontSize: '30px',
+                      //  fontSize: '30px',
                     }
                 },
                 subtitle: {
@@ -100,11 +119,11 @@ export default {
                 },
                 series: [
                     {
-                        name: "pria",
+                        name: "Pria",
                         data: [827272, 927272, 627272, 557289, 677233]
                     },
                     {
-                        name: "wanita",
+                        name: "Wanita",
                         data: [907272, 887272, 777272, 947277, 907299]
                     },
                 ]
@@ -113,7 +132,7 @@ export default {
             chartColumnOptions: {
                 chart:{
                     type: 'column',
-                    backrgoundColor: 'transparent'
+                    backgroundColor: 'transparent',
                 },
                 credits: { //logo highcjhart
                     enabled: false
@@ -131,7 +150,7 @@ export default {
                 },
                 tooltip: { // kalau hover di point, keluar keterangan
                     enabled: true, // bawaan emang true
-                    split: true,
+                    shared: true,
                     formatter: function(){
                     console.log(this.points);
                     return [`<b>Tahun ${this.x}</b><br/>`].concat(
@@ -163,11 +182,11 @@ export default {
                 },
                 series: [
                     {
-                        name: "pria",
+                        name: "Pria",
                         data: [827272, 927272, 627272, 557289, 677233]
                     },
                     {
-                        name: "wanita",
+                        name: "Wanita",
                         data: [907272, 887272, 777272, 947277, 907299]
                     },
                 ]
@@ -176,7 +195,7 @@ export default {
             chartAreaOptions: {
                 chart:{
                     type: 'area',
-                    backrgoundColor: 'transparent'
+                    backrgoundColor: 'transparent',
                 },
                 credits: { //logo highcjhart
                     enabled: false
@@ -233,11 +252,11 @@ export default {
                 },
                 series: [
                     {
-                        name: "pria",
+                        name: "Pria",
                         data: [827272, 927272, 627272, 557289, 677233]
                     },
                     {
-                        name: "wanita",
+                        name: "Wanita",
                         data: [907272, 887272, 777272, 947277, 907299]
                     },
                 ]
@@ -246,7 +265,7 @@ export default {
             chartBarOptions: {
                 chart:{
                     type: 'bar',
-                    backrgoundColor: 'transparent'
+                    backrgoundColor: 'transparent',
                 },
                 credits: { //logo highcjhart
                     enabled: false
@@ -264,15 +283,7 @@ export default {
                 },
                 tooltip: { // kalau hover di point, keluar keterangan
                     enabled: true, // bawaan emang true
-                    /* formatter: function() {
-                        return `<b>Tahun ${this.x}</b> 
-                        <br/> 
-                        <p>Jumlah penduduk ${this.series.name} : ${this.point.y}</p>`
-                    }, */
-                    // pilih 1 antara pake format atau formatter, ga bisa dua-duanya
-                // format: 'Tahun {x} <br> jumlah penduduk {point.y}'
-                    shared: true, // biar yang ke-hover pria dan wanita sekaligus
-                    // split: true,
+                    shared: true, 
                     formatter: function(){
                     console.log(this.points);
                     return [`<b>Tahun ${this.x}</b><br/>`].concat(
@@ -303,11 +314,11 @@ export default {
                 },
                 series: [
                     {
-                        name: "pria",
+                        name: "Pria",
                         data: [827272, 927272, 627272, 557289, 677233]
                     },
                     {
-                        name: "wanita",
+                        name: "Wanita",
                         data: [907272, 887272, 777272, 947277, 907299]
                     },
                 ]
@@ -316,7 +327,7 @@ export default {
             pieChartOptions: {
                 chart:{
                     type: 'pie',
-                    backrgoundColor: 'transparent'
+                    backrgoundColor: 'transparent',
                 },
                 credits: { //logo highcjhart
                     enabled: false
@@ -335,7 +346,6 @@ export default {
                             enabled: true,
                             distance: -50,
                             format: '{point.name} : {point.y}'
-
                         }
                     }
                 },
@@ -344,11 +354,11 @@ export default {
                         name: "Jumlah :",
                         data: [
                             {
-                                name: "pria",
+                                name: "Pria",
                                 y: 353553
                             },
                             {
-                                name: "wanita",
+                                name: "Wanita",
                                 y: 403553
                             },
                         ]
