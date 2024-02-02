@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p class="text-sm font-light mb-1">Detail of anime ID : {{ $route.params.mal_id }}</p>
+    <NuxtLink to="/anime" class="text-teal-500 my-4 mb-5"> &lt; Back</NuxtLink>
+    <p class="text-sm font-light my-3">Detail of anime ID : {{ $route.params.mal_id }}</p>
     <div class="max-w-screen-lg mx-auto py-4">
       <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-4">
           <!-- Kolom 1 -->
@@ -13,7 +14,7 @@
           </div>
           <!-- Kolom 2 -->
           <div class="col-span-12 md:col-span-9 lg:col-span-9">
-            <h2 class="text-2xl font-bold mb-1">{{ item.title }}</h2>
+            <h2 class="text-2xl font-bold mb-1 text-teal-800">{{ item.title }}</h2>
             <p class="text-md font-normal mb-1">{{ item.duration }}</p>
             <p class="text-md font-normal mb-5">{{ item.source }}</p>
             <p class="text-md font-normal mb-1">{{ item.synopsis }}</p>
