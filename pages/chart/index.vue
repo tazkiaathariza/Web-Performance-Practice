@@ -56,6 +56,10 @@
 </template>
 
 <script>
+definePageMeta({
+  layout:'forchart'
+});
+
 export default {
     data() {
         return {
@@ -370,7 +374,4 @@ export default {
         }
     },
 };
-definePageMeta({
-  layout:'forchart'
-});
 </script>
