@@ -12,10 +12,11 @@ Folder ini merupakan task dari materi Data Visualization dan Web Performance. Ja
     - `index.vue` - url `http://localhost:3000/anime` : Menampilkan seluruh list data anime dari API.
     - `[mal_id]/index.vue` - url `http://localhost:3000/anime/[mal_id]` : Rute dinamis yang menampilkan data anime
     spesifik berdasarkan idnya.
-2. Manga
+3. Manga
     - `index.vue` - url `http://localhost:3000/manga` : Menampilkan seluruh list data manga dari API.
     - `[mal_id]/index.vue` - url `http://localhost:3000/manga/[mal_id]` : Rute dinamis yang menampilkan data manga
     spesifik berdasarkan idnya.
+4. Home `index.vue` - url `http://localhost:3000` : Halaman sederhana untuk navigasi menu. 
 
 ## Getting started
 1. Download atau clone repository ini :
@@ -33,4 +34,7 @@ Visualization Data
 
 From previous class..
 ![hasil3](/public/ss3.png)
-![hasil3](/public/ss4.png)
+![hasil4](/public/ss4.png)
+
+Very simple home page
+![hasil5](/public/ss5.png)
