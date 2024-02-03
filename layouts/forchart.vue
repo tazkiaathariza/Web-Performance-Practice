@@ -1,16 +1,39 @@
 <template>
-  <nav class="bg-teal-800 px-6 py-5 flex items-center justify-between font-poppins">
-        <a class="text-white text-lg font-semibold" href="/">
-            <span>BTJ Chart</span>
-        </a>
-        <div class="flex items-center space-x-6">
-            <a href="/chart" class="text-white hover:text-gray-400">Basic</a>
-            <a href="/chart/advance" class="text-white hover:text-gray-400">Advance</a>
-            <a href="/chart/posttest" class="text-white hover:text-gray-400">Post Test</a>
-        </div>
+  <nav class="bg-gray-100 px-6 py-5 flex items-center justify-between font-poppins shadow-md">
+    <NuxtLink class="text-teal-800 text-lg font-semibold" to="/">
+        <span>BTJ Academy</span>
+    </NuxtLink>
+    <div class="flex items-center space-x-6">
+        <NuxtLink to="/chart" :class="{ 'active': isActive('/chart') }" class="text-teal-800 hover:text-gray-400">
+         Basic
+        </NuxtLink>
+        <NuxtLink to="/chart/advance" :class="{ 'active': isActive('/chart/advance') }" class="text-teal-800 hover:text-gray-400">
+         Advance
+        </NuxtLink>
+        <NuxtLink to="/chart/posttest" :class="{ 'active': isActive('/chart/posttest') }" class="text-teal-800 hover:text-gray-400">
+         Post Test
+        </NuxtLink>
+    </div>
     </nav>
 
     <div class="py-5 px-6 font-poppins">
         <slot></slot>
     </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    isActive(route) {
+      return this.$route.path === route;
+    },
+  },
+};
+</script>
+
+<style scoped>
+.active {
+  font-weight: bold;
+  border-top: 3px solid teal
+}
+</style>

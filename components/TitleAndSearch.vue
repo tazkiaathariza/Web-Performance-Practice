@@ -1,6 +1,6 @@
 <template>
-    <nav class="flex items-center justify-between">
-        <div class="text-grey text-xl font-semibold">
+    <nav class="flex items-center justify-between my-3">
+        <div class="text-grey text-2xl font-bold">
             <span class="text-teal-800">{{ title }}</span>
         </div>
         <div class="flex items-center space-x-4">
