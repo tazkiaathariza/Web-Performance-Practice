@@ -6,7 +6,7 @@
         <h2 class="text-md font-bold leading-loose mb-1">{{ truncateTitle(anime.title) }}</h2>
         <p class="text-md font-normal mb-1">{{ anime.duration }}</p>
         <p class="text-md font-normal mb-1">{{ anime.source }}</p>
-        <NuxtLink :to="{ path: `/anime/${anime.mal_id}` }" class="text-teal-500">Read More ></NuxtLink>
+        <NuxtLink :to="{ path: `/anime/${anime.mal_id}` }" class="text-teal-500">Read More &#8594;</NuxtLink>
     </div>
 </template>
 
@@ -28,7 +28,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

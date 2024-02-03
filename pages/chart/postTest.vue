@@ -98,19 +98,10 @@ export default {
             yAxis: 1,
           },
         ],
-        /* 
         tooltip: { 
           enabled: true, 
           shared: true, 
-          formatter: function(){
-          console.log(this.points);
-            return [`Provinsi: <b>${this.x}</b><br/>`].concat(
-                  this.points ? this.points.map(point => {
-                  return `Jumlah penduduk: <b>${point.y}</b> jiwa<br/>`
-                }) : []
-                )
-              },
-        }, */
+        }, 
          plotOptions: {
           pie: {
             allowPointSelect: true,

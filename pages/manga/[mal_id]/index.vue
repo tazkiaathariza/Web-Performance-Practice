@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink to="/manga" class="text-teal-500 my-4 mb-5"> &lt; Back</NuxtLink>
+    <NuxtLink to="/manga" class="text-teal-500 my-4 mb-5">&#x2190; Back</NuxtLink>
     <p class="text-sm font-light my-3">Detail of manga ID : {{ $route.params.mal_id }}</p>
     <div class="max-w-screen-lg mx-auto py-4">
       <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-4">

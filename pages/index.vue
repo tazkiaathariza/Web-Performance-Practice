@@ -3,8 +3,6 @@
   <div class="flex flex-col items-center justify-center min-h-screen bg-white border rounded-[25px] my-5 mx-10">
     <h1 class="text-4xl font-bold mb-3 text-center">BTJ Academy Task</h1>
     <h2 class="text-lg text-gray-600 mb-5 text-center">Tazkia Athariza Dhivara</h2>
-
-    <div class="">
       <!-- Card 1 -->
        <div class="w-full bg-gray-50 p-5 border rounded-md mb-4 ml-2 hover:border-teal-500 hover:shadow-md">
           <h2 class="text-lg font-semibold mb-4">&#128640; Data Visualization Class</h2>
@@ -59,27 +57,14 @@
               Manga Section &#8594;</NuxtLink>
             </div>
           </div>
-      </div>
+      </div> 
+ 
 
-      
-    </div>
-
-    
-  </div>
-
-</div>
 </template>
 
 <script>
 definePageMeta({
   layout:'home'
 });
-
-export default {
-
-}
 </script>
 
-<style>
-
-</style>
