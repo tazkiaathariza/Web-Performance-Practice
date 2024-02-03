@@ -1,6 +1,6 @@
 <template>
      <div class="items-center justify-between text-center mb-5">
-        <h1 class="text-2xl font-bold">Advance Graphic</h1>
+        <h1 class="text-2xl font-bold text-teal-800">Advance Chart</h1>
         <p class="mt-2">Data Visualization Day 2 - Tazkia Athariza</p>
     </div>  
 
@@ -9,13 +9,13 @@
         <highchart 
             :options="chartMultipleAxisOptions" 
             :modules="['exporting', 'export-data']"
-            class="my-5 mx-3 p-2 bg-gray-50 bg-gray-50 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+            class="my-5 mx-3 p-2 bg-gray-50 bg-gray-100 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
         />
         <p class="text-teal-800">✓ Multiple Chart :</p>
         <highchart 
             :options="chartOptions" 
             :modules="['exporting', 'export-data']"
-            class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+            class="my-5 mx-3 p-2 bg-gray-100 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
         />
         
     </div>

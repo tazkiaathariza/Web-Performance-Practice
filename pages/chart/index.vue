@@ -1,7 +1,7 @@
 <template>
 
     <div class="items-center justify-between text-center my-2">
-        <h1 class="text-2xl font-bold">Basic Chart</h1>
+        <h1 class="text-2xl font-bold text-teal-800">Basic Chart</h1>
         <p class="mt-2 mb-5">Data Visualization Day 1 - Tazkia Athariza</p>
     </div>  
 
@@ -11,7 +11,7 @@
             <highchart 
                 :options="chartOptions" 
                 :modules="['exporting', 'export-data']"
-                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                class="my-5 mx-3 p-2 bg-gray-100 border rounded-2xl
                  hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
             />
         </div>
@@ -20,7 +20,7 @@
             <highchart 
                 :options="chartColumnOptions" 
                 :modules="['exporting', 'export-data']"
-                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                class="my-5 mx-3 p-2 bg-gray-100 border rounded-2xl
                  hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
             />
         </div>
@@ -38,7 +38,7 @@
             <highchart 
                 :options="chartBarOptions" 
                 :modules="['exporting', 'export-data']"
-                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                class="my-5 mx-3 p-2 bg-gray-100 border rounded-2xl
                  hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
             />
         </div>
@@ -47,7 +47,7 @@
                <highchart 
                 :options="pieChartOptions" 
                 :modules="['exporting', 'export-data']"
-                class="my-5 mx-3 p-2 bg-gray-50 border rounded-2xl
+                class="my-5 mx-3 p-2 bg-gray-100 border rounded-2xl
                  hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
             />
         </div>

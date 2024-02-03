@@ -1,15 +1,15 @@
 <template>
-    <div class="items-center justify-between text-center my-2">
-        <h1 class="text-2xl font-bold">Post Test Data Visualization - Day 2</h1>
-        <p class="mt-2">by Tazkia Athariza Dhivara</p>
-    </div>
+  <div class="items-center justify-between text-center my-2">
+    <h1 class="text-2xl font-bold text-teal-800">Post Test Data Visualization - Day 2</h1>
+    <p class="mt-2">Tazkia Athariza Dhivara</p>
+  </div>
  <div class="flex my-1 mx-auto p-5 items-center justify-between lg:mx-20">
    <div class="my-5 mx-5">
-        <p class="text-teal-800 mb-4">✓ Multiple chart (bar, pie, and line) & multiple axis ('data Penduduk' and 'data penduduk per km<sup>2</sup>')</p>
+        <p class="text-teal-800 mb-4">✓ Multiple chart (bar, pie, and line) & multiple axis ('jumlah Penduduk' and 'jumlah penduduk per km<sup>2</sup>')</p>
         <highchart 
         :options="chartOptions"   
         :modules="['exporting', 'export-data']"
-        class="p-5 bg-gray-50 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
+        class="p-5 bg-gray-100 border rounded-2xl hover:border-teal-500 hover:border-1 hover:shadow-md transition duration-300 ease-in-out"
         />
         </div>
     </div>
@@ -93,7 +93,7 @@ export default {
             data: [],
             tooltip: {
               headerFormat: '<b>Provinsi: {point.x}</b><br/>',
-              pointFormat: 'Jumlah penduduk: <b>{point.y} jiwa per km2</b><br/>',
+              pointFormat: 'Jumlah penduduk per km2: <b>{point.y} jiwa/km2</b><br/>',
             },
             yAxis: 1,
           },
@@ -120,9 +120,9 @@ export default {
     this.fetchPeopleDataList();
   },
   methods: {
-    hurufKapital(str) { // huruf kapital untuk provinsi
-      return str.split(' ').map(word => {
-          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    hurufKapital(provinsi) { // huruf kapital untuk provinsii
+      return provinsi.split(' ').map(huruf => {
+          return huruf.charAt(0).toUpperCase() + huruf.slice(1).toLowerCase();
       }).join(' ');
     },
     async fetchPeopleDataList() {
@@ -136,7 +136,7 @@ export default {
       console.log("ini xAxis", this.chartOptions.xAxis.categories);
 
       // Masukan data dari API untuk bar chart
-      this.chartOptions.series[0].data = this.items.map(entry => parseFloat(entry.jumlah_penduduk)); // ubah string ke angka
+      this.chartOptions.series[0].data = this.items.map(entry => parseFloat(entry.jumlah_penduduk)); // ubahtz string ke angka
       console.log("ini series untuk bar", this.chartOptions.series[0].data);
 
       // Masukan data dari API untuk pie chart
