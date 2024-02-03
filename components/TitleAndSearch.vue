@@ -4,7 +4,7 @@
             <span class="text-teal-800">{{ title }}</span>
         </div>
         <div class="flex items-center space-x-4">
-           <input type="text" placeholder="Search..." class="border rounded-md py-1 px-2 focus:border-teal-500">
+           <input v-model="searchQuery" @input="filterItems" type="text" placeholder="Search..." class="border rounded-md py-1 px-2 focus:border-teal-500">
         </div>
     </nav>
 </template>
@@ -16,6 +16,16 @@ export default {
             type: String,
             default: "Page Title"
         }
+    },
+data() {
+    return {
+      searchQuery: ""
+    };
+  },
+  methods: {
+    filterItems() {
+      this.$emit("updateSearch", this.searchQuery);
     }
+  }
 }
 </script>
